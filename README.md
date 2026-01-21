@@ -14,6 +14,20 @@ conda env create -f environment.yml
 conda activate quake-ml
 ```
 
+## Running notebooks
+
+1) Generate the processed dataset:
+
+```sh
+python src/data_prep.py
+```
+
+2) Start Jupyter from the repo root and open the notebook you want:
+
+```sh
+jupyter notebook
+```
+
 ## Machine Learning Algorithms
 
 ### Logistic Regression
