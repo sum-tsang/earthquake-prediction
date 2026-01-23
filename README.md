@@ -27,11 +27,33 @@ jupyter notebook
 - Macro F1: 0.47
 - Weighted F1: 0.86
 
-### Analysis
+## Analysis
 
 - Temporal features were most important.
 - Location and depth contributed moderately.
 - Rare high‑magnitude classes (7+) remain harder to predict due to imbalance.
+
+### Exploratory Data Analysis (EDA)
+
+Run:
+
+```sh
+python src/eda.py
+```
+
+#### Magnitude Category Distribution
+
+![Magnitude category distribution](charts/eda_mag_category.png)
+
+#### Depth Distribution
+
+![Depth distribution](charts/eda_depth_distribution.png)
+
+#### Spatial Distribution by Magnitude
+
+![Spatial distribution by magnitude](charts/eda_spatial_scatter.png)
+
+### Model‑Guided Analysis
 
 ## Permutation Importance (Gradient Boosting)
 
