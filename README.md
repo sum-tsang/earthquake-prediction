@@ -1,5 +1,17 @@
 # Predicting Earthquakes Using 200 Years of Global Major Earthquakes
 
+## Project Overview
+
+This project predicts earthquake magnitude category (5-5.9, 6-6.9, 7+) from location, depth, and time features using 1826-2026 global earthquake data. It includes data prep, EDA plots, and model-guided analysis with gradient boosting.
+
+**Results Overview**
+
+- Best model: Gradient Boosting
+- Accuracy: 0.88 | Macro F1: 0.47 | Weighted F1: 0.86
+- Imbalanced dataset, due to rarity of 7+ magnitude earthquakes.
+
+Model-guided plots (permutation importance and confusion matrix) are generated in `notebooks/gradient_boosting.ipynb`.
+
 **Goal:** Predict earthquake magnitude category (5–5.9, 6–6.9, 7+) from location, depth, and time‑based features using historical data (1826–2026).
 
 **Dataset:** 200 Years of Global Major Earthquakes (1826–2026) from Kaggle.
@@ -14,6 +26,7 @@ conda activate quake-ml
 
 # Generate the processed dataset
 python src/data_prep.py
+python src/eda.py
 
 # Start Jupyter from the repo root
 jupyter notebook
