@@ -66,12 +66,20 @@ python src/eda.py
 
 ### Model‑Guided Analysis
 
-## Permutation Importance (Gradient Boosting)
+#### Permutation Importance (Gradient Boosting)
 
 We used permutation importance to identify which features most influenced magnitude predictions.
 
 ![Permutation importance (Gradient Boosting)](charts/gb_perm_importance.png)
 
-- Time features rank highest in this model.
-- Location and depth still contribute but are secondary.
-- Temporal dominance may reflect catalog/reporting changes, so interpret with care.
+- Year ranks highest in this model.
+- Location and depth contributions are less impactful than the year.
+- Temporal dominance may reflect technology improvements in later years.
+
+#### Confusion Matrix (Gradient Boosting)
+
+![Normalized Confusion Matrix (Gradient Boosting)](charts/gb_confusion_matrix.png)
+
+- The 5-5.9 class is predicted correctly most of the time (~0.99 recall).
+- The 6-6.9 class is often predicted as 5-5.9, so recall is low (~0.26).
+- The 7+ class has very low recall (~0.05), reflecting class imbalance.
