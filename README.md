@@ -45,13 +45,24 @@ python src/eda.py
 
 ![Magnitude category distribution](charts/eda_mag_category.png)
 
+- High class imbalance: 5-5.9 magnitude earthquakes are most prevalent.
+- 7+ magnitude rarity causes difficult recall.
+- Macro F1 is more informative than accuracy given the skew.
+
 #### Depth Distribution
 
 ![Depth distribution](charts/eda_depth_distribution.png)
 
+- Depths between ~0-100 km are more prevalent than ~200 km+.
+- The distribution is right-skewed with a long tail to ~700 km.
+
 #### Spatial Distribution by Magnitude
 
 ![Spatial distribution by magnitude](charts/eda_spatial_scatter.png)
+
+- Events cluster in low-to-mid latitudes.
+- Coverage spans most longitudes, so location features are meaningful.
+- Spatial clustering reflect tectonic boundaries.
 
 ### Model‑Guided Analysis
 
@@ -60,3 +71,7 @@ python src/eda.py
 We used permutation importance to identify which features most influenced magnitude predictions.
 
 ![Permutation importance (Gradient Boosting)](charts/gb_perm_importance.png)
+
+- Time features rank highest in this model.
+- Location and depth still contribute but are secondary.
+- Temporal dominance may reflect catalog/reporting changes, so interpret with care.
